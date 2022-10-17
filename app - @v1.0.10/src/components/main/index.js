@@ -8,8 +8,6 @@ import SaveIcon from '@material-ui/icons/Save';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Url_post } from '../services'
-
 export default function Main() {
 
   const navigate=useNavigate()
@@ -24,39 +22,38 @@ export default function Main() {
 
   },[])
 
+
   async function requisicaoAjax(){
 
-     let data={pais, uf, cidade, nome, habilidade}
+     let idadmin=localStorage.getItem('idadmin')
 
-     await fetch( Url_post,{method:'POST',
+     let id_admin={"idadmin": idadmin}
+
+     let data={pais, uf, cidade, nome, habilidade, id_admin}
+
+     let URL_post=`http://localhost:8765/admin-mutantes-app/registro/${idadmin}/registro-de-mutantes`
+     
+     await fetch( URL_post,{method:'POST',
                       body:JSON.stringify(data),
                       headers:{'Content-Type':'application/json' }
      })
      .then(response=>{
           if(response.ok){
-               response.json()
-               navigate('/lista-de-mutantes', {replace: true})
-               limpar()
+               console.log(response.json())
+               navigate(`/lista-de-mutantes/${idadmin}`, {replace: true})
           }
           else{
                alert("Houve um erro ao contatar o servidor.")
           }
      })
      .catch(err=>console.error(err))
+
   } 
 
   function enviar(e){
      e.preventDefault()
      requisicaoAjax()
 }
-
-  function limpar(){
-     setPais('')
-     setUf('')
-     setCidade('')
-     setNome('')
-     setHabilidade('')
-  }
 
   return (
        <div className='_MAIN'>

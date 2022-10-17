@@ -11,7 +11,7 @@ import '../../../App.css';
 import Header from '../../header'
 import { Data_styled } from './style';
 
-import { Url_get } from '../../services'
+import { Url_get }  from '../../services'
 import Title from '../../title';
 
 export default function ShowData(){
@@ -19,10 +19,10 @@ export default function ShowData(){
  const [mutantes, setMutantes]=useState([])
 
   useEffect(()=>{
-
+    //deve ser refeito
     fetch(Url_get,{method:'GET'})
-      .then(response=>response.json())
-      .then(response=>setMutantes(response))
+      .then(response=>console.log(response.json()))
+      // .then(response=>setMutantes(response))
       .catch(e=>console.error(e))
   
   },[])
@@ -55,7 +55,8 @@ export default function ShowData(){
        
 
         <Data_styled>
-            {
+            { 
+              //deve ser refeito
               mutantes.map(mutante=>{
                 return(
                   <Grid container>
