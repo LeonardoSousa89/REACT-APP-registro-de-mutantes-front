@@ -11,18 +11,21 @@ import '../../../App.css';
 import Header from '../../header'
 import { Data_styled } from './style';
 
-import { Url_get }  from '../../services'
 import Title from '../../title';
 
 export default function ShowData(){
 
  const [mutantes, setMutantes]=useState([])
+ let idadmin=localStorage.getItem('idadmin')
 
   useEffect(()=>{
-    //deve ser refeito
+    let Url_get=``
     fetch(Url_get,{method:'GET'})
-      .then(response=>console.log(response.json()))
-      // .then(response=>setMutantes(response))
+      .then(response=>response.json())
+      .then(response=>{
+        //setMutantes(response)}
+        console.log(response)
+      })
       .catch(e=>console.error(e))
   
   },[])
@@ -42,7 +45,7 @@ export default function ShowData(){
                       color="secondary" 
                       size="large"
                       id="button">
-                    <Link className="anchor" to="/">
+                    <Link className="anchor" to={`/insercao/${idadmin}/registro-de-mutantes`}>
                       Voltar
                     </Link> 
               </Button>
@@ -56,7 +59,7 @@ export default function ShowData(){
 
         <Data_styled>
             { 
-              //deve ser refeito
+
               mutantes.map(mutante=>{
                 return(
                   <Grid container>
@@ -92,6 +95,7 @@ export default function ShowData(){
                   </Grid>
                 )
               })
+
             }
 
         </Data_styled>

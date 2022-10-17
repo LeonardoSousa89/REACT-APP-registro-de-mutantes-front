@@ -6,8 +6,6 @@ import Header from '../../header'
 import Title from '../../title'
 import { Register_styled } from './style'
 
-import { cadastro_admin_post } from '../../services'
-
 import { Button, TextField } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
 import SaveIcon from '@material-ui/icons/Save';
@@ -28,6 +26,8 @@ useEffect(()=>{
 
 async function requisiçãoAjax(){
     let data={nome, email, senha}
+    
+    let cadastro_admin_post='http://localhost:8765/admin-mutantes-app/registro/cadastro'
 
     await fetch(cadastro_admin_post,
         { method:'POST',

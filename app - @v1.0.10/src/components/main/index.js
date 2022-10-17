@@ -17,7 +17,7 @@ export default function Main() {
   const [cidade, setCidade]=useState('')
   const [nome, setNome]=useState('')
   const [habilidade, setHabilidade]=useState('')
-  
+
   useEffect(()=>{
 
   },[])
