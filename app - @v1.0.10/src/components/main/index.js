@@ -55,10 +55,28 @@ export default function Main() {
      requisicaoAjax()
 }
 
+function sair(){
+     localStorage.removeItem('idadmin')
+     navigate('/login' ,{replace: true})
+}
+
   return (
        <div className='_MAIN'>
+
             <Main_styled>
              
+            <div  className="sair">
+               <Button   
+                    variant="contained" 
+                    color="secondary" 
+                    size="large"
+                    onClick={sair}
+                    >
+                    sair
+               </Button>
+          </div>
+
+
              <form onSubmit={enviar}>
                <Grid container>
                          <Grid item xs={2}>

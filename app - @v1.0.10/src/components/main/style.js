@@ -1,7 +1,7 @@
 import style from 'styled-components'
 
 export const Main_styled = style.section`
-  height:82vh;
+  height:60vh;
   padding: 5vh;
 
   display:flex;
@@ -23,5 +23,9 @@ export const Main_styled = style.section`
   .middle{
     width:94%;
   }
+
+  .sair{
+    margin-bottom:100px;
+  }  
 `;
 

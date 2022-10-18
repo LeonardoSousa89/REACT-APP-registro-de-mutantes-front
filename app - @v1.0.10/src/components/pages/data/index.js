@@ -19,7 +19,12 @@ export default function ShowData(){
  let idadmin=localStorage.getItem('idadmin')
 
   useEffect(()=>{
-    let Url_get=``
+
+    /**teste */
+    let Url_test1='http://localhost:8765/admin-mutantes-app/registro/all/conta/registro-de-mutantes'
+    let Url_test2='http://localhost:8765/admin-mutantes-app/registro/all/mutantes/registro-de-mutantes'
+    
+    let Url_get=Url_test1
     fetch(Url_get,{method:'GET'})
       .then(response=>response.json())
       .then(response=>{
