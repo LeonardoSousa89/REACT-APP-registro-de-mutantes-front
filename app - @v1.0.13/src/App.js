@@ -6,6 +6,7 @@ import Main from  './components/pages/main'
 import Data from './components/pages/data'
 import Register from './components/pages/register'
 import Login from './components/pages/login'
+import Erro from './components/pages/404'
 
 export default function App(){
   return (
@@ -16,6 +17,7 @@ export default function App(){
           <Route exact path="/cadastro" element={<Register/>} />
           <Route exact path="/" element={<Login/>} />
           <Route exact path="/login" element={<Login/>} />
+          <Route exact path="*" element={<Erro/>} />
       </Routes>
     </BrowserRouter>
     );
