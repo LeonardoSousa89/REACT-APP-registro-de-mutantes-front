@@ -1,0 +1,68 @@
+/* Color Theme Swatches in Hex */
+/* https://color.adobe.com/ */
+.My-Color-Theme-1-hex { color: #2976E6; }
+.My-Color-Theme-2-hex { color: #2BAFF0; }
+.My-Color-Theme-3-hex { color: #32CED9; }
+.My-Color-Theme-4-hex { color: #2BF0C6; }
+.My-Color-Theme-5-hex { color: #29E688; }
+
+
+
+*{
+  margin: 0;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: whitesmoke;
+
+  display:flex;
+  flex-direction: column;
+}
+
+.container{
+  margin-top: 10px;
+  padding:30px;
+
+  display: flex;
+}
+
+.container .title{
+  width:100%;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: xx-large;
+}
+
+.anchor{
+  text-decoration: none;
+  color: black;
+ 
+}
+
+.erro{
+  text-align: center;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-size: 10vh;
+  font-family: fantasy;
+
+  background: whitesmoke;
+
+}
+
+#click{
+  font-size: 3vh;
+  margin-top: 6vh;
+
+  color: #2976E6;
+}
+
+a{
+  text-decoration: none;
+}
