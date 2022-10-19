@@ -57,7 +57,7 @@ const [habilidade, setHabilidade]=useState('')
                alert("Houve um erro ao contatar o servidor.")
           }
      })
-     .catch(err=>console.error(err))
+     .catch(()=>alert("Houve um erro ao contatar o servidor."))
 
   } 
 
