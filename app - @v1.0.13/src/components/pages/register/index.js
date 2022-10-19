@@ -28,12 +28,12 @@ useEffect(()=>{
 
 async function requisiçãoAjax(){
 
-    let id=auth.currentUser.uid
-    localStorage.setItem('idadmin', id)
-
     await createUserWithEmailAndPassword(auth,email,senha)
-            .then(response=>{
+            .then((response)=>{
                 console.log(response)
+
+                let id=auth.currentUser.uid
+                localStorage.setItem('idadmin', id)
                 navigate(`/insercao/${id}/registro-de-mutantes`,{replace:true})
             })
             .catch(err=>{

@@ -24,20 +24,22 @@ export default function Login(){
 
     },[email, senha])
 
-    
 
     async function login(e){
         e.preventDefault()
 
-        let id=auth.currentUser.uid
-        localStorage.setItem('idadmin', id)
-
         await signInWithEmailAndPassword(auth,email,senha)
-                .then(()=>{
-                navigate(`/insercao/${id}/registro-de-mutantes`,{replace:true})
+
+                .then((response)=>{
+                    console.log(response)
+
+                    let id=auth.currentUser.uid
+                    localStorage.setItem('idadmin', id)
+                    navigate(`/insercao/${id}/registro-de-mutantes`,{replace:true})
                 }).catch(()=>{
                     alert('Erro ao logar, verifique o usuário e a senha.')
                 })
+
     }
 
 
